@@ -1,0 +1,24 @@
+{
+  "name": "ceabq-worker-auth",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "start": "wrangler dev"
+  },
+  "devDependencies": {
+    "@cloudflare/kv-asset-handler": "^0.3.0",
+    "@cloudflare/workers-types": "^4.20230419.0",
+    "@types/auth0-js": "^9.21.0",
+    "@types/node": "^20.4.1",
+    "itty-router": "^3.0.12",
+    "typescript": "^5.0.4",
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "auth0-js": "^9.21.0",
+    "axios": "^1.4.0",
+    "jose": "^4.14.4"
+  }
+}
