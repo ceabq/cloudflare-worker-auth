@@ -6,7 +6,7 @@ How to use:
 
 1. Change Line 13 in public_files/pages/login-callback/js/token.js to your own domain.
 
-2. add 
+2. add and change these lines in wrangler.toml
 
    ```toml
    [vars]
