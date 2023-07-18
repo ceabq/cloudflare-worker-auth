@@ -10,8 +10,6 @@
 
 import apiRouter from './router';
 import { getAssetFromKV, mapRequestToAsset } from '@cloudflare/kv-asset-handler'
-
-//https://github.com/cloudflare/kv-asset-handler/issues/360
 import manifestJSON from '__STATIC_CONTENT_MANIFEST'
 const assetManifest = JSON.parse(manifestJSON)
 import { Env } from '../worker-configuration'; 

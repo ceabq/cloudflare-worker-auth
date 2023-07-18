@@ -37,7 +37,7 @@ catch(e) {
 let { payload, protectedHeader } = joseverify
 let payloaddecoded = new TextDecoder().decode(payload)
 let payloaddecodedjson = JSON.parse(payloaddecoded)
-if (payloaddecodedjson.sid) {
+if (payloaddecodedjson.sid || payloaddecodedjson.exp <= Date.now()) {
     document.getElementById('auth-status').innerHTML = `you are logged in. You are currenlt login with ${payloaddecodedjson.sub.split('|')[0]}, your user id is ${payloaddecodedjson.sub.split('|')[1]}`
     document.getElementById('auth-status').style.color = 'green'
     document.getElementById('auth-status').style.fontSize = 'large'
