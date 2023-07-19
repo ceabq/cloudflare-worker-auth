@@ -2,7 +2,7 @@ export interface Env {
 	__STATIC_CONTENT: any;
 	redirectUri: string;
 	clientID:string;
-	authdomain:string
+	authdomain:string;
 	// Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/
 	// MY_KV_NAMESPACE: KVNamespace;
 	//

@@ -2,7 +2,7 @@ import { Router } from 'itty-router';
 import auth0 from 'auth0-js';
 import { Env } from '../worker-configuration';
 
-let  auth0option = {domain: 'example.us.auth0.com', clientID: 'clientid',redirectUri : 'http://localhost:3000/api/callback' , responseType: 'id_token', nonce:'replace.nouce040411111'}
+var auth0option = {domain: 'example.us.auth0.com', clientID: 'clientid',redirectUri : 'http://localhost:3000/api/callback' , responseType: 'id_token', nonce:'replace.nouce040411111'}
 const auth0main = new auth0.Authentication(auth0option)
 let htmlheader = new Headers({"Content-Type": "text/html"})
 
@@ -16,6 +16,7 @@ async function modauthoption(env:Env) {
 async function login(env:Env) {
 	modauthoption(env)
 	await auth0noucegen()
+	const auth0main = new auth0.Authentication(auth0option)
 	return Response.redirect(auth0main.buildAuthorizeUrl(auth0option))
 };
 async function randbuf() {
@@ -31,6 +32,7 @@ async function randbuf() {
 }
 async function logout(env:Env) {
 	modauthoption(env)
+	const auth0main = new auth0.Authentication(auth0option)
 	return Response.redirect(auth0main.buildLogoutUrl(auth0option))
 }
 async function auth0noucegen() {
